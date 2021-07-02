@@ -696,7 +696,10 @@ abstract class AbstractJaxwsMojo
         {
             vmArgs = new ArrayList<>();
         }
-        vmArgs.add( vmArg );
+        if ( !vmArgs.contains(vmArg))
+        {
+            vmArgs.add( vmArg );
+        }
     }
 
     private boolean isEndorsedArtifact( Artifact a )
